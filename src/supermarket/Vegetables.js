@@ -16,9 +16,9 @@ export default function Vegetables() {
     <section className="products" id="products">
         <h1><hr></hr></h1>
       <h1 className="heading"class="text-center " >
-      <FcBookmark size={80}/> Our
+      <FcBookmark size={50}/>
         {' '}
-        <span> Vegetables</span>  <FcBookmark size={80}/>
+        <span> Vegetables</span>  <FcBookmark size={50}/>
       </h1><hr></hr>
       <div className="products-slider slider">
         <div className="wrapper swiper-wrapper">

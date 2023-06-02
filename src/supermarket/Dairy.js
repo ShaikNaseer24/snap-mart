@@ -16,7 +16,7 @@ export default function Dairy() {
     <section className="products" id="products">
          <h1><hr></hr></h1>
       <h1 className="heading" class="text-center ">
-      <FcBookmark size={50}/>  Our
+      <FcBookmark size={50}/>  
         {' '}
         <span> Dairy Products</span>  <FcBookmark size={50}/>
       </h1><hr></hr>
@@ -131,3 +131,4 @@ export default function Dairy() {
       </section>
       )
       }
+    

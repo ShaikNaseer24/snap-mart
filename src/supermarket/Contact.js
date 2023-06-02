@@ -72,7 +72,7 @@ export default class Contact extends Component {
               <br />
               <Row>
                 <Col lg="12" className="form-group">
-                  <button className="btn ac_btn" class="contbt" type="submit"> 
+                  <button className="btn ac_btn btn-block col-md-12"  type="submit"> 
                   Send
                   </button>
                 </Col>

@@ -10,6 +10,9 @@ import Contact from './supermarket/Contact';
 import Mycart from './supermarket/mycart';
 import Slider from './supermarket/slider';
 import {CartProvider} from "react-use-cart";
+import { Fragment } from 'react';
+import ScrollButton from './scrolltotop/ScrollButton';
+import { Content, Heading } from './scrolltotop/Styles';
 import logo1 from './images/logo1.jpg';
 import Categories from './supermarket/Categories1';
 import Login from './supermarket/Login';
@@ -26,6 +29,7 @@ import { FaShopify} from 'react-icons/fa';
  import { FaStore } from 'react-icons/fa';
  import { FaPhotoVideo } from 'react-icons/fa';
   import { IoMdContacts  } from 'react-icons/io';
+  import Cards from './supermarket/Cards';
   import {FcBookmark} from 'react-icons/fc';
   import {FcOk} from 'react-icons/fc';
 function App() {
@@ -38,13 +42,10 @@ function App() {
   };
  
   return (
-   
-    <div>
+    <div>  
    <Router>
-  
-
         <nav class="navbar   bg-white  navbar-expand-sm fixed-top">
-        <Link to="./"><img class="navbar-brand" className="logo1" src={logo1}/></Link>&nbsp;&nbsp;<span class="text-dark" title="Shaik-Nithin-Arun-Prasanna">SNAP-MART </span><FcOk/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Link to="./"><img class="navbar-brand" className="logo1" src={logo1}/></Link>&nbsp;&nbsp;<span class="text-dark" title="Shaik-Nithin-Arun-Prasanna">SNAP-MART </span><FcOk/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbar"  aria-controls="navbar" data-bs-target="#navbarContant">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -65,7 +66,7 @@ function App() {
                <li><Link class="dropdown-item text-dark" to="./Products "onClick={scrollToTop}  >All Products</Link></li></ul>
         </li>&nbsp;&nbsp;
             <li class="nav-item">
-            <Link class="nav-link text-dark " to="./Nearby" onClick={scrollToTop} >< FaStore/>&nbsp; Store's In INDIA</Link>
+            <Link class="nav-link text-dark " to="./Cards" onClick={scrollToTop} >< FaStore/>&nbsp; Store's In INDIA</Link>
             </li>&nbsp;&nbsp;
             <li class="nav-item">
               <Link class="nav-link text-dark "to="./Photes"onClick={scrollToTop} ><FaPhotoVideo/> &nbsp; Photo Gallery</Link>
@@ -96,6 +97,8 @@ function App() {
           <Route path="/Vegetables" element={<Vegetables/>} />
           <Route path="/Products" element={<Products />} />
           <Route path="/Carts" element={<Carts/>} />
+          <Route path="/Cards" element={<Cards/>} />
+
 
         </Routes>
         <hr></hr>
@@ -120,7 +123,7 @@ function App() {
                       <div class="thumb-content"><Link to="" onClick={scrollToTop}>Home</Link></div>
                     </li>
                     <li>
-                      <div class="thumb-content"><Link to="./Categories1" onClick={scrollToTop}>Shop by categories</Link></div>
+                      <div class="thumb-content"><Link to="./Products" onClick={scrollToTop}>Products</Link></div>
                     </li>
                     
                     <li>
@@ -189,7 +192,7 @@ function App() {
           </div>
         </div>
       </footer></Router>
-    
+      <ScrollButton />
       </div>
   );
 }

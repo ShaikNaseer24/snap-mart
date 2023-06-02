@@ -7,11 +7,11 @@ const Itemcart =(props)=>{
  const {addItem}= useCart();
     return (
       <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-4">
         <div className="card mdb-color lighten-2 text-center z-depth-2">
 <div class="card p-0 overflow-hidden h-700 shadow" >
-  <img  src={props.img} class="card-img-top img-fluid"/>
-  <div class="card-body text-center">
+<img  src={props.img} class="card-img-top img-fluid"/>
+  <div class="col">
     <h5 class="card-title">{props.title}</h5>
     <h5 class="card-title">₹ {props.price}</h5>
     <p class="card-text">{props.desc}</p>

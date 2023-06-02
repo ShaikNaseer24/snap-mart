@@ -12,7 +12,7 @@ export default function Categories1() {
     <section className="categories" id="categories">
       <hr></hr>
       <h1 className="heading" class="text-center ">
-      <FcBookmark size={50}/> Our
+      <FcBookmark size={50}/> 
         {' '}
         <span>Categories</span><FcBookmark size={50}/>
       </h1><hr></hr>
@@ -41,6 +41,9 @@ export default function Categories1() {
       
       </div>
     </section>
-   </div>
+    </div>
+              
+         
+   
   );
 }

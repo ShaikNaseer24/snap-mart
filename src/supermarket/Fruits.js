@@ -101,7 +101,7 @@ export default function Fruits() {
                 <h3>fresh fruits</h3>
                 <div className="price">₹ 50.99/ -- 100.99/-</div>
                 <div className="stars">
-                  <FontAwesomeIcon icon={faStar} />
+                  <faStar/>
                   <FontAwesomeIcon icon={faStar} />
                   <FontAwesomeIcon icon={faStar} />
                   <FontAwesomeIcon icon={faStar} />

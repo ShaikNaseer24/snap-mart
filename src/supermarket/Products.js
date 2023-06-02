@@ -29,7 +29,7 @@ export default function Products() {
     <section className="products" id="products">
       <hr></hr>
       <h1 className="heading" class="text-center">
-      <FcBookmark size={50}/> Our
+      <FcBookmark size={50}/>
         {' '}
         <span>Products</span>  <FcBookmark size={50}/>
       </h1><hr></hr>
