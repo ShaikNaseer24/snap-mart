@@ -281,8 +281,8 @@ margin-bottom: -60px;
 }
 
 .card {
-    max-width: 300px; /*only using it for better showcase here*/
-    margin: 50px 10px; /*only using it for better showcase here*/
+    max-width: 400px;/*only using it for better showcase here*/
+    margin: 20px 7px; /*only using it for better showcase here*/
 }
   
 .card-container {
