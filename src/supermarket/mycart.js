@@ -1,6 +1,7 @@
 import React from 'react'
-import Itemcart from './itemcart';
+//import Itemcart from './itemcart';
 import Data from './Data';
+import Vegetables from './Vegetables';
  const mycart =() => {
  
     return (
@@ -8,9 +9,9 @@ import Data from './Data';
         <h1 class="text-center mt-12 col-md-12" className="col" >all items</h1>
         <section class="py-4 container">
             <div class="row justify-content-center">
-              {Data.productData.map((item,index)=>{
+              {Vegetables.map((item,index)=>{
                 return(
-                <Itemcart img={item.img}
+                <Vegetables img={item.img}
                  title={item.title} 
                  desc={item.desc} 
                  price={item.price} 

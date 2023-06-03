@@ -9,8 +9,11 @@ import imgp4 from '../images/imgp4.jpg';
 import imgv2 from '../images/imgv2.jpg';
 import imgv3 from '../images/imgv3.jpg';
 import imgv4 from '../images/imgv4.jpg';
+import { useCart } from "react-use-cart";
 import {FcBookmark} from 'react-icons/fc';
+
 export default function Vegetables() {
+  
   SwiperCore.use([Autoplay]);
   return (
     <section className="products" id="products">
@@ -52,7 +55,7 @@ export default function Vegetables() {
                   <FontAwesomeIcon icon={faStar} />
                   <FontAwesomeIcon icon={faStarHalfAlt} />
                 </div>
-                <button type="button" className="btn">
+                <button type="button" className="btn" >
                   add to cart
                 </button>
               </div>

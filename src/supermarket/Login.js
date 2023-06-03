@@ -100,17 +100,17 @@ export default class Login extends Component {
                 <div class="row">
                  <div class="col-md-12 mb-12"> 
                       <div class="form-outline">
-                      <label class="form-label"  htmlFor="name" for="form3Example1">Full Name <span class="text-danger">*</span></label>
+                      <label class="form-label text-dark"  htmlFor="name" for="form3Example1">Full Name <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control"id="name" value={name} onChange={this.handleChange} />    
                         {errors.name && <span className='B'>{errors.name} </span>}</div>
                   <div class="form-outline mb-4">
-                  <label class="form-label" htmlFor="email"for="form3Example3">Email address <span class="text-danger">*</span></label>
+                  <label class="form-label text-dark" htmlFor="email"for="form3Example3">Email address <span class="text-danger">*</span></label>
                     <input type="email"  id="email"
             value={email}
             onChange={this.handleChange}class="form-control" />                   
                     {errors.email && <span className='B'>{errors.email}</span>}</div>
              <div class="form-outline mb-4">
-                  <label class="form-label" htmlFor="password"for="form3Example4">Password <span class="text-danger">*</span></label>
+                  <label class="form-label text-dark" htmlFor="password"for="form3Example4">Password <span class="text-danger">*</span></label>
                     <input type="password" id="password" value={password} onChange={this.handleChange}class="form-control" />
                     {errors.password && <span className='B'>{errors.password}</span>}</div>
                   <button type="submit"  className='A'class="btn  btn-block col-md-12 ">

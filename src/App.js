@@ -127,13 +127,13 @@ function App() {
                     </li>
                     
                     <li>
-                      <div class="thumb-content"><Link to="./Nearby" onClick={scrollToTop}>Stores In India</Link></div>
+                      <div class="thumb-content"><Link to="./Cards" onClick={scrollToTop}>Stores In India</Link></div>
                     </li>
                     <li>
                       <div class="thumb-content"><Link to="./Photes" onClick={scrollToTop}>Image Gallery</Link></div>
                     </li>                  
                     <li>
-                      <div class="thumb-content"><Link to="./Contact">Contact Us</Link></div>
+                      <div class="thumb-content"><Link to="./Contact" onClick={scrollToTop}>Contact Us</Link></div>
                     </li>
                     
                   </ul>
@@ -144,19 +144,19 @@ function App() {
                 <div class="widget no-box">
                   <h5 class="widget-title">Categories<span></span></h5>
                   <ul class="thumbnail-widget">
+                    
                     <li>
-                      <div class="thumb-content"><Link to="./Categories1">Grocery & Staples</Link></div>
+                      <div class="thumb-content"><Link to="./Vegetables" onClick={scrollToTop}>Vegetables Products</Link></div>
                     </li>
                     <li>
-                      <div class="thumb-content"><Link to="./Vegetables">Vegetables Products</Link></div>
+                      <div class="thumb-content"><Link to="./Contact" onClick={scrollToTop}>Dairy Products</Link></div>
                     </li>
                     <li>
-                      <div class="thumb-content"><Link to="./Contact">Dairy Products</Link></div>
+                      <div class="thumb-content"><Link to="./Fruits" onClick={scrollToTop}>Fruits Items</Link></div>
                     </li>
                     <li>
-                      <div class="thumb-content"><Link to="./Fruits">Fruits Items</Link></div>
+                      <div class="thumb-content"><Link to="./Products"  onClick={scrollToTop}>All Products</Link></div>
                     </li>
-
                   </ul>
                   
                 </div>
