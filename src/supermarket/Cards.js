@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Nearby from './Nearby';
+import Store2 from '../stores/Store2';
 import imgs35 from '../images/imgs35.jpg';
 import imgs36 from '../images/imgs36.jpg';
 import imgs33 from '../images/imgs33.jpg';
@@ -78,7 +79,7 @@ export default function Cards() {
         <div class="card-block text-center">
           <h4 class="card-title">Rating</h4>
 					<p class="card-text"><a href="#" class="rating">7,52/10</a></p>
-          <Link to="/Nearby" onClick={scrollToTop2} class="btn orange">See More</Link>
+          <Link to="/Store2" onClick={scrollToTop} class="btn orange">See More</Link>
         </div>
 						<img class="movie" src={imgs36} alt="back-img"/>
       </div>
@@ -245,6 +246,7 @@ export default function Cards() {
 </div></div></div>
 </div><Routes>
       <Route path="/Nearby" element={<Nearby/>} />
+      <Route path="/Store2" element={<Store2/>} />
        </Routes></div>
   )
 }

@@ -29,17 +29,6 @@ tiles.forEach(function (a, i) {
 )
   return (
     <div class="container">
-    <div class="gallery">
-        <div id="lighthouse-bg" hidden="hidden">
-        </div>
-        <div class="images">
-            <img src="https://i.postimg.cc/wB1T36Gq/1.jpg"/>
-            <img src="https://i.postimg.cc/5tD9CZhw/2.jpg"/>
-            <img src="https://i.postimg.cc/Vv8Y7XLv/3.jpg"/>
-            <img src="https://i.postimg.cc/Qd4dXBSY/4.jpg"/>
-        </div>
-
     </div>
-</div>
   )
 }

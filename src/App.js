@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
+import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Categories1 from './supermarket/Categories1';
 import Home from './supermarket/Home';
@@ -33,7 +34,6 @@ import { FaShopify} from 'react-icons/fa';
   import {FcBookmark} from 'react-icons/fc';
   import {FcOk} from 'react-icons/fc';
 function App() {
-  
   const scrollToTop = () =>{
     window.scrollTo({
       top: 0, 
@@ -43,6 +43,7 @@ function App() {
  
   return (
     <div>  
+
    <Router>
         <nav class="navbar   bg-dark  navbar-expand-sm fixed-top active">
         <Link to="./"><img class="navbar-brand" className="logo1" src={logo1}/></Link>&nbsp;&nbsp;<span class="text-white" title="Shaik-Nithin-Arun-Prasanna">SNAP-MART </span><FcOk/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
