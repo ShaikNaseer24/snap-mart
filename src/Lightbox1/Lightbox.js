@@ -1,5 +1,5 @@
 import React from 'react'
-import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import imgv2 from '../images/imgv2.jpg';
 import imgd from '../images/imgd.jpg';
@@ -19,7 +19,7 @@ tiles.forEach(function (a, i) {
             main.classList.add("lighthouse")
         }
         else {
-            main.removeChild(this)
+        
             main.classList.remove("lighthouse")
          
             images.insertBefore(this, images.children[i])

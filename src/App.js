@@ -44,18 +44,18 @@ function App() {
   return (
     <div>  
    <Router>
-        <nav class="navbar   bg-white  navbar-expand-sm fixed-top">
-        <Link to="./"><img class="navbar-brand" className="logo1" src={logo1}/></Link>&nbsp;&nbsp;<span class="text-dark" title="Shaik-Nithin-Arun-Prasanna">SNAP-MART </span><FcOk/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <nav class="navbar   bg-dark  navbar-expand-sm fixed-top active">
+        <Link to="./"><img class="navbar-brand" className="logo1" src={logo1}/></Link>&nbsp;&nbsp;<span class="text-white" title="Shaik-Nithin-Arun-Prasanna">SNAP-MART </span><FcOk/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbar"  aria-controls="navbar" data-bs-target="#navbarContant">
                 <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" className="navme" id="navbarContant">
           <ul class="navbar-nav">
             <li class="nav-item" >
-            <Link class="nav-link  text-dark "to="/" onClick={scrollToTop}  > <FaHome/>&nbsp;&nbsp;Home</Link>
+            <Link class="nav-link  text-white "to="/" onClick={scrollToTop}  > <FaHome/>&nbsp;&nbsp;Home</Link>
             </li> &nbsp;&nbsp;
             <li class="nav-item dropdown ">
-             <Link  class="nav-link dropdown-toggle text-dark" to="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <Link  class="nav-link dropdown-toggle text-white" to="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
              <FaShopify/> &nbsp;Categories
              </Link>
              <ul class="dropdown-menu">
@@ -66,21 +66,21 @@ function App() {
                <li><Link class="dropdown-item text-dark" to="./Products "onClick={scrollToTop}  >All Products</Link></li></ul>
         </li>&nbsp;&nbsp;
             <li class="nav-item">
-            <Link class="nav-link text-dark " to="./Cards" onClick={scrollToTop} >< FaStore/>&nbsp; Store's In INDIA</Link>
+            <Link class="nav-link text-white" to="./Cards" onClick={scrollToTop} >< FaStore/>&nbsp; Store's In INDIA</Link>
             </li>&nbsp;&nbsp;
             <li class="nav-item">
-              <Link class="nav-link text-dark "to="./Photes"onClick={scrollToTop} ><FaPhotoVideo/> &nbsp; Photo Gallery</Link>
+              <Link class="nav-link text-white "to="./Photes"onClick={scrollToTop} ><FaPhotoVideo/> &nbsp; Photo Gallery</Link>
             </li>&nbsp;&nbsp;
             <li class="nav-item">
-            <Link class="nav-link  text-dark"to="./Contact" onClick={scrollToTop} ><IoMdContacts size={15}/> &nbsp; Contact US</Link>
+            <Link class="nav-link  text-white"to="./Contact" onClick={scrollToTop} ><IoMdContacts size={15}/> &nbsp; Contact US</Link>
             </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <li class="nav-item nav-end">
               
-            <Link class="nav-link  text-dark"to="./Login" onClick={scrollToTop} ><span class="icons"><BiUserCircle size={35}/></span></Link>
+            <Link class="nav-link  text-white"to="./Login" onClick={scrollToTop} ><span class="icons"><BiUserCircle size={35}/></span></Link>
             </li> &nbsp;
             
                 <li class="nav-item me-3 me-lg-0 " >
-                    <Link class="nav-link text-dark" to="./Carts"onClick={scrollToTop} ><span class="icons"><GiShoppingCart size={35}/></span><i class="fas fa-shopping-cart"></i></Link>
+                    <Link class="nav-link text-white" to="./Products"onClick={scrollToTop} ><span class="icons"><GiShoppingCart size={35}/></span><i class="fas fa-shopping-cart"></i></Link>
                 </li></ul>
          </div>
         </nav>
