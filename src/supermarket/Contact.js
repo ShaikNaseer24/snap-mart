@@ -3,8 +3,26 @@ import { Container, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { contactConfig } from "./content_option";
+import axios from 'axios';
 
 export default class Contact extends Component {
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    axios
+      .post('/send-email', formData)
+      .then((response) => {
+        console.log(response);
+        // Handle successful form submission
+      })
+      .catch((error) => {
+        console.error(error);
+        // Handle form submission error
+      });
+  };
   render() {
   return (
     <div>
@@ -36,7 +54,7 @@ export default class Contact extends Component {
             <p>{contactConfig.description}</p>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
-            <form  className="contact__form w-100">
+            <form className="contact__form w-100" onSubmit={this.handleSubmit}>
             <h2>Fill-In Form Field</h2>
               <Row>
                 <Col lg="6" className="form-group">
