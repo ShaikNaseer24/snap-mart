@@ -2,6 +2,15 @@ import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
+import Test from './Test';
+import Login2 from './login';
+import Store2 from './stores/Store2';
+import Store3 from './stores/Store3';
+import Store4 from './stores/Store4';
+import Store5 from './stores/Store5';
+import Store6 from './stores/Store6';
+import Store7 from './stores/Store7';
+import Store8 from './stores/Store8';
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Categories1 from './supermarket/Categories1';
@@ -101,7 +110,15 @@ function App() {
           <Route path="/Products" element={<Products />} />
           <Route path="/Carts" element={<Carts/>} />
           <Route path="/Cards" element={<Cards/>} />
-
+          <Route path="/Test" element={<Test/>} />
+          <Route path="/Store2" element={<Store2/>} />
+          <Route path="/Store3" element={<Store3/>} />
+          <Route path="/Store4" element={<Store4/>} />
+          <Route path="/Store5" element={<Store5/>} />
+          <Route path="/Store6" element={<Store6/>} />
+          <Route path="/Store7" element={<Store7/>} />
+          <Route path="/Store8" element={<Store8/>} />
+          <Route path="/loginshaik" element={<Login2/>} />
 
         </Routes>
         <hr></hr>
@@ -199,5 +216,4 @@ function App() {
       </div>
   );
 }
-
 export default App;

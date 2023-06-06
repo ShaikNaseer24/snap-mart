@@ -1,17 +1,48 @@
-import React, { Component } from 'react'
+import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 
-export default class Login extends Component {
-  
-  constructor(props) {
-    super(props);
+  const Login= () =>{
 
-    this.state = {
-      name: '',
-      email: '',
-      password: '',
-      errors: {}
-    };
-  }
+
+    const [formData, setFormData] = useState({
+    
+        customer_firstname: '',
+       
+       customer_email: '',
+       customer_password:'',
+      });
+      const [submitting, setSubmitting] = useState(false);
+      const [error, setError] = useState('');
+    
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          [name]: value,
+        }));
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        createMerchant();
+      }
+      const createMerchant = async () => {
+        setSubmitting(true);
+        try {
+          const response = await axios.post('http://localhost:3001/customerlogin_data', formData);
+          console.log(response);
+          alert('Admission Successfully Submitted');
+          setError('');
+        } catch (error) {
+          console.error(error);
+          alert('Error submitting admission');
+          setError('Internal Server Error');
+        } finally {
+          setSubmitting(false);
+        }
+      };
+
  
 
   handleSubmit = (e) => {
@@ -57,8 +88,7 @@ export default class Login extends Component {
     const { id, value } = e.target;
     this.setState({ [id]: value });
   };
-  render() {
-    const { name, email, password, errors } = this.state;
+ 
     return (
       <div>
         
@@ -96,29 +126,46 @@ export default class Login extends Component {
            <br></br>
             <label >&nbsp;&nbsp; Please Fill The Form <span class="text-danger">*</span></label>
               <div class="card-body px-1 py-5 px-md-5">
-                <form onSubmit={this.handleSubmit} >     
+                <form onSubmit={handleSubmit} >     
                 <div class="row">
                  <div class="col-md-12 mb-12"> 
                       <div class="form-outline">
-                      <label class="form-label text-dark"  htmlFor="name" for="form3Example1">Full Name <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control"id="name" value={name} onChange={this.handleChange} />    
-                        {errors.name && <span className='B'>{errors.name} </span>}</div>
+                      <label class="form-label text-dark"htmlFor="name"  for="form3Example1">Full Name <span class="text-danger">*</span></label>
+                        <input type="text"  class="form-control"id="name" className='inpl'
+                    name="customer_firstname"
+                    placeholder='Your Name'
+                    value={formData.customer_firstname}
+                    onChange={handleChange}
+                    required
+                    data-aos="fade-right"/>    
+                       </div>
                   <div class="form-outline mb-4">
-                  <label class="form-label text-dark" htmlFor="email"for="form3Example3">Email address <span class="text-danger">*</span></label>
-                    <input type="email"  id="email"
-            value={email}
-            onChange={this.handleChange}class="form-control" />                   
-                    {errors.email && <span className='B'>{errors.email}</span>}</div>
+                  <label class="form-label text-dark"  htmlFor="email"for="form3Example3">Email address <span class="text-danger">*</span></label>
+                    <input type="email"  id="email" className='inpl'
+                    name="customer_email"
+                    placeholder='Your Name'
+                    value={formData.customer_email}                  
+                    required
+                    data-aos="fade-right"  
+            onChange={handleChange}class="form-control" />                   
+                  </div>
              <div class="form-outline mb-4">
-                  <label class="form-label text-dark" htmlFor="password"for="form3Example4">Password <span class="text-danger">*</span></label>
-                    <input type="password" id="password" value={password} onChange={this.handleChange}class="form-control" />
-                    {errors.password && <span className='B'>{errors.password}</span>}</div>
-                  <button type="submit"  className='A'class="btn  btn-block col-md-12 ">
-                   Login
+                  <label  htmlFor="password" class="form-label text-dark" for="form3Example4">Password <span class="text-danger">*</span></label>
+                    <input type="password"  class="form-control"  id="password"
+                    className='inpl'
+                    name="customer_password"
+                    placeholder='Your Name'
+                    value={formData.customer_password}
+                    onChange={this.handleChange}
+                    required
+                    data-aos="fade-right"/>
+                   </div>
+                  <button type="submit"  className='A'class="btn  btn-block col-md-12 " disabled={submitting} data-aos="fade-up">
+                  {submitting ? 'Submitting...' : 'Submit'} Login
                   </button> 
-                  </div></div>              
+                  {error && <p>{error}</p>}
+                  </div></div>        
                 </form>
-   
                 </div>
             </div>
              </div>
@@ -128,4 +175,4 @@ export default class Login extends Component {
 </div>
     )
   }
-}
+export default Login ;

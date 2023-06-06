@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Nearby from './Nearby';
-import Store2 from '../stores/Store2';
 import imgs35 from '../images/imgs35.jpg';
 import imgs36 from '../images/imgs36.jpg';
 import imgs33 from '../images/imgs33.jpg';
@@ -10,20 +9,7 @@ import img33 from '../images/img33.jpg';
 import imgs34 from '../images/imgs34.jpg';
 import {FcBookmark} from 'react-icons/fc';
 export default function Cards() {
-  
   const scrollToTop = () =>{
-    window.scrollTo({
-      top: 100, 
-      behavior: 'smooth'
-    });
-  };
-  const scrollToTop2 = () =>{
-    window.scrollTo({
-      top: 700, 
-      behavior: 'smooth'
-    });
-  };
-  const scrollToTop3 = () =>{
     window.scrollTo({
       top: 0, 
       behavior: 'smooth'
@@ -105,7 +91,7 @@ export default function Cards() {
         <div class="card-block text-center">
           <h4 class="card-title">Rating</h4>
 					<p class="card-text"><a href="#" class="rating">7,52/10</a></p>
-          <Link to="/Nearby"  onClick={scrollToTop3} class="btn orange">See More </Link>
+          <Link to="/Store3"  onClick={scrollToTop} class="btn orange">See More </Link>
         </div>
 						<img class="movie" src={imgs33} alt="back-img"/>
       </div>
@@ -131,7 +117,7 @@ export default function Cards() {
         <div class="card-block text-center">
           <h4 class="card-title">Rating</h4>
 					<p class="card-text"><a href="#" class="rating">7,52/10</a></p>
-          <Link to="/Nearby"  onClick={scrollToTop} class="btn orange">See More</Link>
+          <Link to="/Store4"  onClick={scrollToTop} class="btn orange">See More</Link>
         </div>
 						<img class="movie" src={imgs38} alt="back-img"/>
       </div>
@@ -157,7 +143,7 @@ export default function Cards() {
         <div class="card-block text-center">
           <h4 class="card-title">Rating</h4>
 					<p class="card-text"><a href="#" class="rating">7,52/10</a></p>
-          <Link to="/Nearby"  onClick={scrollToTop} class="btn orange">See More</Link>
+          <Link to="/Store5"  onClick={scrollToTop} class="btn orange">See More</Link>
         </div>
 						<img class="movie" src={imgs35} alt="back-img"/>
       </div>
@@ -184,7 +170,7 @@ export default function Cards() {
         <div class="card-block text-center">
           <h4 class="card-title">Rating</h4>
 					<p class="card-text"><a href="#" class="rating">7,52/10</a></p>
-          <Link to="/Nearby"  onClick={scrollToTop} class="btn orange">See More</Link>
+          <Link to="/Store6"  onClick={scrollToTop} class="btn orange">See More</Link>
         </div>
 						<img class="movie" src={imgs36} alt="back-img"/>
       </div>
@@ -210,7 +196,7 @@ export default function Cards() {
         <div class="card-block text-center">
           <h4 class="card-title">Rating</h4>
 					<p class="card-text"><a href="#" class="rating">7,52/10</a></p>
-          <Link to="/Nearby"  onClick={scrollToTop} class="btn orange">See More</Link>
+          <Link to="/Store7"  onClick={scrollToTop} class="btn orange">See More</Link>
         </div>
 						<img class="movie" src={imgs34} alt="back-img"/>
       </div>
@@ -236,7 +222,7 @@ export default function Cards() {
         <div class="card-block text-center">
           <h4 class="card-title">Rating</h4>
 					<p class="card-text"><a href="#" class="rating">8,52/10</a></p>
-          <Link to="/Nearby"  onClick={scrollToTop} class="btn orange">See More</Link>
+          <Link to="/Store8"  onClick={scrollToTop} class="btn orange">See More</Link>
         </div>
 						<img class="movie" src={img33} alt="back-img"/>
       </div>
@@ -244,9 +230,6 @@ export default function Cards() {
     
 	</div>
 </div></div></div>
-</div><Routes>
-      <Route path="/Nearby" element={<Nearby/>} />
-      <Route path="/Store2" element={<Store2/>} />
-       </Routes></div>
+</div></div>
   )
 }
