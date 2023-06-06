@@ -7,28 +7,36 @@ import imgv3 from '../images/imgv3.jpg';
 import imgf2 from '../images/imgf2.jpg';
 import imgf3 from '../images/imgf3.jpg';
 import img2 from '../images/img2.jpg';
+import $ from 'jquery';
 export default function Lightbox1() {
-  const main = document.getElementById("lighthouse-bg");
-const images = document.querySelector(".images")
-const tiles = document.querySelectorAll(".images img");
-tiles.forEach(function (a, i) {
-    tiles[i].onclick = function () {
-        if (!main.classList.contains("lighthouse")) {
-            main.style.visibility = "visible"
-            main.appendChild(this)
-            main.classList.add("lighthouse")
-        }
-        else {
-        
-            main.classList.remove("lighthouse")
-         
-            images.insertBefore(this, images.children[i])
-        }
-    }
-}
-)
+  $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+  });
   return (
     <div class="container">
-    </div>
+  <div class="row">
+    <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid rounded"/>
+    </a>
+    <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid rounded"/>
+    </a>
+    <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid rounded"/>
+    </a>
+  </div>
+  <div class="row">
+    <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=254" class="img-fluid rounded"/>
+    </a>
+    <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid rounded"/>
+    </a>
+    <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid rounded"/>
+    </a>
+  </div>
+</div>
   )
 }
