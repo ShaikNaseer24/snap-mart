@@ -20,6 +20,14 @@ import Vegetables from './Vegetables';
 import Dairy from './Dairy';
 import Fruits from './Fruits';
 import { useEffect } from 'react';
+const CartButton = ({ cartItems, openCartPage }) => {
+  return (
+    <div className="cart-icon" onClick={openCartPage}>
+      <FaShoppingCart />
+      {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
+    </div>
+  );
+};
 export default function Products() {
   const [itemCount, setItemCount] = useState(1);
   const [cartItems, setCartItems] = useState([]);
@@ -357,7 +365,9 @@ export default function Products() {
             {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
           </div>
         )}
+         <CartButton cartItems={cartItems} openCartPage={openCartPage} />
       </section>
+     
     </div>
   );
 }

@@ -1,29 +1,34 @@
-import React, { Component } from 'react'
+import React from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { contactConfig } from "./content_option";
-import axios from 'axios';
 
-export default class Contact extends Component {
-  handleSubmit = (event) => {
-    event.preventDefault();
+import { useState } from "react";
 
-    const form = event.target;
-    const formData = new FormData(form);
-
-    axios
-      .post('/send-email', formData)
-      .then((response) => {
-        console.log(response);
-        // Handle successful form submission
-      })
-      .catch((error) => {
-        console.error(error);
-        // Handle form submission error
+const Contact = () =>{
+    const [status, setStatus] = useState("Submit");
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setStatus("Sending...");
+      const { name, email, message } = e.target.elements;
+      let details = {
+        name: name.value,
+        email: email.value,
+        message: message.value,
+      };
+      let response = await fetch("http://localhost:3002/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(details),
       });
-  };
-  render() {
+      setStatus("Submit");
+      let result = await response.json();
+      alert(result.status);
+    };
+ 
   return (
     <div>
   <Container>
@@ -54,12 +59,13 @@ export default class Contact extends Component {
             <p>{contactConfig.description}</p>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
-            <form className="contact__form w-100" onSubmit={this.handleSubmit}>
+            <form className="contact__form w-100" onSubmit={handleSubmit}>
             <h2>Fill-In Form Field</h2>
               <Row>
                 <Col lg="6" className="form-group">
                 
                   <input
+                   htmlFor="name"
                     className="form-control"
                     id="name"
                     name="name"
@@ -75,6 +81,7 @@ export default class Contact extends Component {
                     name="email"
                     placeholder="Email"
                     type="email" 
+                    htmlFor="email"
                     required 
                   />
                 </Col>
@@ -91,7 +98,7 @@ export default class Contact extends Component {
               <Row>
                 <Col lg="12" className="form-group">
                   <button className="btn ac_btn btn-block col-md-12"  type="submit"> 
-                  Send
+                  {status}  Send
                   </button>
                 </Col>
               </Row>
@@ -113,4 +120,4 @@ export default class Contact extends Component {
 
   );
 }
-}
+export default Contact ;

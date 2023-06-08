@@ -12,42 +12,15 @@ import imgd13 from '../images/img13.jpg';
 import imgd3 from '../images/imgd3.jpg';
 import {FcBookmark} from 'react-icons/fc';
 import {FaShoppingCart} from 'react-icons/fa';
-export default function Dairy() {
+import Navbar from './Navbar';
+
+export default function Dairy({ addToCart, removeFromCart, incrementQuantity, decrementQuantity }) {
   const [itemCount, setItemCount] = useState(1);
   const [cartItems, setCartItems] = useState([]);
   const [showCart, setShowCart] = useState(false);
   SwiperCore.use([Autoplay]);
 
-  const addToCart = (item) => {
-    const existingItem = cartItems.find((cartItem) => cartItem.name === item.name);
-    if (existingItem) {
-      const updatedItems = cartItems.map((cartItem) =>
-        cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-      );
-      setCartItems(updatedItems);
-    } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
-    }
-  };
-
-  const removeFromCart = (item) => {
-    const updatedItems = cartItems.filter((cartItem) => cartItem.name !== item.name);
-    setCartItems(updatedItems);
-  };
-
-  const incrementQuantity = (item) => {
-    const updatedItems = cartItems.map((cartItem) =>
-      cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-    );
-    setCartItems(updatedItems);
-  };
-
-  const decrementQuantity = (item) => {
-    const updatedItems = cartItems.map((cartItem) =>
-      cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem
-    );
-    setCartItems(updatedItems.filter((cartItem) => cartItem.quantity > 0));
-  };
+  
 
   const openCartPage = () => {
     setShowCart(true);
@@ -59,6 +32,7 @@ export default function Dairy() {
 
   SwiperCore.use([Autoplay]);
   return (
+    
     <section className="products" id="products">
          <h1><hr></hr></h1>
       <h1 className="heading" class="text-center ">
@@ -242,6 +216,10 @@ export default function Dairy() {
           </div>
         )}
       </div>
+      <div>
+       
+      </div>
+      
       </section>
       )
       }

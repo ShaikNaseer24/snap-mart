@@ -37,28 +37,66 @@ import { BiUserCircle } from 'react-icons/bi';
 import { FaHome} from 'react-icons/fa';
 import { FaShopify} from 'react-icons/fa';
  import { FaStore } from 'react-icons/fa';
+ import { FaShoppingCart} from 'react-icons/fa';
+
  import { FaPhotoVideo } from 'react-icons/fa';
   import { IoMdContacts  } from 'react-icons/io';
   import Cards from './supermarket/Cards';
   import {FcBookmark} from 'react-icons/fc';
   import {FcOk} from 'react-icons/fc';
   import imgf3 from './images/imgf3.jpg';
-  import LightboxGallery from './Lightbox1/LightboxGallery';
-function App() {
+import Cart1 from './supermarket/Cart1';
+import CartButton from './CartButton';
+import Navbar from './supermarket/Navbar';
 
+function App() {
   const scrollToTop = () =>{
     window.scrollTo({
       top: 0, 
       behavior: 'smooth'
     });
   };
- 
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    const existingItem = cartItems.find((cartItem) => cartItem.name === item.name);
+    if (existingItem) {
+      const updatedItems = cartItems.map((cartItem) =>
+        cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+      );
+      setCartItems(updatedItems);
+    } else {
+      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    }
+  };
+
+  const removeFromCart = (item) => {
+    const updatedItems = cartItems.filter((cartItem) => cartItem.name !== item.name);
+    setCartItems(updatedItems);
+  };
+
+  const incrementQuantity = (item) => {
+    const updatedItems = cartItems.map((cartItem) =>
+      cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+    );
+    setCartItems(updatedItems);
+  };
+
+  const decrementQuantity = (item) => {
+    const updatedItems = cartItems.map((cartItem) =>
+      cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem
+    );
+    setCartItems(updatedItems.filter((cartItem) => cartItem.quantity > 0));
+  };
+
   return (
     <div>  
+      
+     
    <Router>
         <nav class="navbar   bg-dark  navbar-expand-sm fixed-top active">
         <Link to="./"><img class="navbar-brand" className="logo1" src={logo1}/></Link>&nbsp;&nbsp;<span class="text-white" title="Shaik-Nithin-Arun-Prasanna">SNAP-MART </span><FcOk/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbar"  aria-controls="navbar" data-bs-target="#navbarContant">
+          <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-target="#navbar"  aria-controls="navbar" data-bs-target="#navbarContant">
                 <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" className="navme" id="navbarContant">
@@ -92,7 +130,21 @@ function App() {
             </li> &nbsp;
             
                 <li class="nav-item me-3 me-lg-0 " >
-                    <Link class="nav-link text-white" to="./Products"onClick={scrollToTop} ><span class="icons"><GiShoppingCart size={35}/></span><i class="fas fa-shopping-cart"></i></Link>
+                    <Link class="nav-link text-white" to="/Navbar"onClick={scrollToTop} >
+                  
+        <FaShoppingCart size={35}/>
+        {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
+        {/* Render the cart items */}
+        {cartItems.length > 0 && (
+          <div className="cart-items-dropdown">
+            {cartItems.map((item) => (
+              <div key={item.name}
+              item={item.price}
+              image={item.imgd13}></div>
+            ))}
+          </div>
+        )}
+          </Link>
                 </li></ul>
          </div>
         </nav>
@@ -109,6 +161,9 @@ function App() {
           <Route path="/Vegetables" element={<Vegetables/>} />
           <Route path="/Products" element={<Products />} />
           <Route path="/Carts" element={<Carts/>} />
+          <Route path="/Cart1" element={<Cart1/>} />
+          <Route path="/CartButton" element={<CartButton/>} />
+
           <Route path="/Cards" element={<Cards/>} />
           <Route path="/Test" element={<Test/>} />
           <Route path="/Store2" element={<Store2/>} />
@@ -120,7 +175,7 @@ function App() {
           <Route path="/Store8" element={<Store8/>} />
           <Route path="/loginshaik" element={<Login2/>} />
 
-        </Routes>
+         </Routes>
         <hr></hr>
      <footer id="footer" class="footer-1">
      
@@ -130,7 +185,7 @@ function App() {
             <div class="row">         
               <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="widget subscribe no-box">
-                  <h5 class="widget-title">SNAP-Mart<span> </span></h5>
+                  <h5 class="widget-title text-warning">SNAP-Mart<span> </span></h5>
                   <p> SNAP-Mart is a Supermarket helps you achieve the best quality items. </p>
                 </div>
               </div>

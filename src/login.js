@@ -8,7 +8,6 @@ const Login= () =>{
 const [formData, setFormData] = useState({
 
     customer_firstname: '',
-   
    customer_email: '',
    customer_password:'',
   });
@@ -32,11 +31,11 @@ const [formData, setFormData] = useState({
     try {
       const response = await axios.post('http://localhost:3001/customerlogin_data', formData);
       console.log(response);
-      alert('Admission Successfully Submitted');
+      alert('login Successfully Submitted');
       setError('');
     } catch (error) {
       console.error(error);
-      alert('Error submitting admission');
+      alert('Error submitting login');
       setError('Internal Server Error');
     } finally {
       setSubmitting(false);

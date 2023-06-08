@@ -21,7 +21,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Perform form validation
+    // form validation
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
       createMerchant();
@@ -118,7 +118,7 @@ const Login = () => {
                      </div>
                 <div class="form-outline mb-4">
                 <label class="form-label text-dark"  htmlFor="email"for="form3Example3">Email address <span class="text-danger">*</span></label>
-                  <input type="email"  id="email" className='inpl'
+                  <input type="email"  id="email" 
                   name="customer_email"
                   placeholder='Enter Your Email'
                   value={formData.customer_email}                  
@@ -138,7 +138,7 @@ const Login = () => {
                      {errors.customer_password && <p className="text-danger">{errors.customer_password}</p>} 
                  </div>
                 <button type="submit"  className='A'class="btn  btn-block col-md-12 " disabled={submitting} data-aos="fade-up">
-                {submitting ? 'Submitting...' : 'Submit'} Login
+                {submitting ? 'Submitting...' : 'Login'} 
                 </button> 
                 
         {errors.serverError && <p className="text-danger">{errors.serverError}</p>}

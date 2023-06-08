@@ -131,6 +131,7 @@ export default function Vegetables() {
           </Swiper>
         </div>
       </div>
+      
       </section>
       )
       }
