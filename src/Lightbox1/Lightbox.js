@@ -46,7 +46,7 @@ export default function Lightbox1() {
       <h1 className="heading" class="text-center ">
       <FcBookmark size={50}/>  
         {' '}
-        <span> Gallery</span>  <FcBookmark size={50}/>
+        <span> my Gallery </span>  <FcBookmark size={50}/>
       </h1><hr></hr>
       <div className="row">
         {images.map((image, index) => (
