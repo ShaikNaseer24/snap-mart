@@ -11,10 +11,25 @@ import imgv3 from '../images/imgv3.jpg';
 import imgv4 from '../images/imgv4.jpg';
 import { useCart } from "react-use-cart";
 import {FcBookmark} from 'react-icons/fc';
+import {FaShoppingCart} from 'react-icons/fa';
+import { useState } from 'react';
 
-export default function Vegetables() {
-  
+export default function Vegetables({ addToCart, removeFromCart, incrementQuantity, decrementQuantity }) {
+  const [itemCount, setItemCount] = useState(1);
+  const [cartItems, setCartItems] = useState([]);
+  const [showCart, setShowCart] = useState(false);
   SwiperCore.use([Autoplay]);
+
+  
+
+  const openCartPage = () => {
+    setShowCart(true);
+  };
+
+  const closeCartPage = () => {
+    setShowCart(false);
+  };
+
   return (
     <section className="products" id="products">
         <h1><hr></hr></h1>
@@ -130,8 +145,55 @@ export default function Vegetables() {
             </SwiperSlide>
           </Swiper>
         </div>
+        {showCart ? (
+          <div className="cart-page container text-center"  class="cartitems" >
+                  
+            <h2 className="bg-dark text-white">Cart</h2>
+            {cartItems.length === 0 ? (
+              <p className="bg-dark text-white">No items in cart</p>
+            ) : (
+              <div className="cart-items" >
+                
+                {cartItems.map((item) => (
+                  <div className="cart-item" key={item.name}>
+                    <img src={item.image} alt={item.name} />
+                    <div className="item-details">
+                      <h3>{item.name}</h3>
+                      <p>{item.price}</p>
+                      <div className="quantity">
+                        <button 
+                          className="quantity-btn bg-info "
+                          onClick={() => decrementQuantity(item)}
+                          disabled={item.quantity === 1}
+                        >
+                          -
+                        </button>
+                        <span>{item.quantity}</span>
+                        <button className="quantity-btn bg-info " onClick={() => incrementQuantity(item)}>
+                          +
+                        </button>
+                      </div>
+                      <button   className="remove-btn bg-danger" onClick={() => removeFromCart(item)}>
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+            <button  className="close-btn bg-warning" onClick={closeCartPage}>
+              Close Cart
+            </button>
+          </div>
+        ) : (
+          <div className="cart-icon" onClick={openCartPage}>
+            <FaShoppingCart />
+            {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
+          </div>
+        )}
       </div>
-      
+      <div>
+      </div>
       </section>
       )
       }

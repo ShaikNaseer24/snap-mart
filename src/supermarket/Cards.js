@@ -29,7 +29,7 @@ export default function Cards() {
       <img src={imgs35} class="card-img-top img-fluid" alt="movie-poster"/>
         <div class="card-block">
           <h5 class="card-title">Kolkata</h5>
-              <p class="card-text">The Biggest Snap mart. In Kolkata</p>
+              <p class="card-text">The Biggest Snap mart.</p>
                 <p class="card-text"><small class="text-muted">2023</small></p>
           </div>
     </div>
@@ -107,7 +107,7 @@ export default function Cards() {
       <img src={imgs38} class="card-img-top img-fluid" alt="movie-poster"/>
         <div class="card-block">
           <h5 class="card-title">Pune</h5>
-              <p class="card-text">Our main Head couters snap mart.</p>
+              <p class="card-text">The Biggest Snap mart.</p>
                 <p class="card-text"><small class="text-muted">2011</small></p>
           </div>
     </div>
@@ -134,7 +134,7 @@ export default function Cards() {
       <img src={imgs35} class="card-img-top img-fluid" alt="movie-poster"/>
         <div class="card-block">
           <h5 class="card-title">Delhi</h5>
-              <p class="card-text">One of the best mart in delhi.</p>
+              <p class="card-text">The Biggest Snap mart.</p>
                 <p class="card-text"><small class="text-muted">2011</small></p>
           </div>
     </div>
@@ -160,7 +160,7 @@ export default function Cards() {
       <img src={imgs36} class="card-img-top img-fluid" alt="movie-poster"/>
         <div class="card-block">
           <h5 class="card-title">Hyderabad</h5>
-              <p class="card-text">Biggest mart in city SNAP-MART.</p>
+              <p class="card-text">The Biggest Snap mart.</p>
                 <p class="card-text"><small class="text-muted">2023</small></p>
           </div>
     </div>
@@ -186,7 +186,7 @@ export default function Cards() {
       <img src={imgs34} class="card-img-top img-fluid" alt="movie-poster"/>
         <div class="card-block">
           <h5 class="card-title">Gujarat</h5>
-              <p class="card-text">Our pride our mart snap mart.</p>
+              <p class="card-text">The Biggest Snap mart.</p>
                 <p class="card-text"><small class="text-muted">2022</small></p>
           </div>
     </div>
@@ -212,7 +212,7 @@ export default function Cards() {
       <img src={img33} class="card-img-top img-fluid" alt="movie-poster"/>
         <div class="card-block">
           <h5 class="card-title">Nellore</h5>
-              <p class="card-text">Our First store starting in this city.</p>
+              <p class="card-text">The Biggest Snap mart.</p>
                 <p class="card-text"><small class="text-muted">2011</small></p>
           </div>
     </div>

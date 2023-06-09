@@ -11,11 +11,13 @@ const Contact = () =>{
     const handleSubmit = async (e) => {
       e.preventDefault();
       setStatus("Sending...");
-      const { name, email, message } = e.target.elements;
+      const { name, email, message,tel } = e.target.elements;
       let details = {
         name: name.value,
         email: email.value,
         message: message.value,
+        tel: tel.value,
+
       };
       let response = await fetch("http://localhost:3002/contact", {
         method: "POST",
@@ -35,7 +37,7 @@ const Contact = () =>{
         <Row className="mb-5 mt-3">
           <Col lg="8">
             <h2  className="display-4 mb-4">Contact Us </h2>
-            <hr className="t_border my-4 ml-0 text-left" />
+            <hr className="t_border my-2 ml-0 text-left" />
           </Col>
         </Row>
         <Row className="sec_sp">
@@ -86,6 +88,23 @@ const Contact = () =>{
                   />
                 </Col>
               </Row>
+              <Row>
+                <Col lg="12" className="form-group">
+                
+                  <input
+                   htmlFor="tel"
+                    className="form-control"
+                    id="tel"
+                    name="tel"
+                    placeholder="Enter Your Mobile Number" 
+                    type="tel"
+                    required 
+                  />
+              </Col>
+              
+            </Row>
+            <Row>
+            <Col lg="12" className="form-group">
               <textarea
                 className="form-control rounded-0"
                 id="message"
@@ -94,7 +113,7 @@ const Contact = () =>{
                 rows="5" 
                 required
               ></textarea>
-              <br />
+              <br /></Col></Row>
               <Row>
                 <Col lg="12" className="form-group">
                   <button className="btn ac_btn btn-block col-md-12"  type="submit"> 

@@ -26,27 +26,27 @@ export default function Lightbox1() {
   };
 
   const images = [
-    { src: imgl1, title: 'Fresh Fruits' },
-    { src: imgl10, title: 'Image 2' },
-    { src: imgl3, title: 'Image 3' },
-    { src: imgl4, title: 'Image 4' },
-    { src: imgl5, title: 'Image ' },
-    { src: imgl6, title: 'Image 4' },
-    { src: imgl7, title: 'Image 4' },
-    { src: imgl8, title: 'Image 4' },
-    { src: imgl9, title: 'Image 4' },
-    { src: imgl10, title: 'Image 4' },
+    { src: imgl1, title:'Snapmart - BANGALORE' },
+    { src: imgl7, title: 'Snapmart - DELHI' },
+    { src: imgl3, title: 'Snapmart - HYDERABAD' },
+    { src: imgl4, title: 'Snapmart - GUJARAT' },
+    { src: imgl5, title: 'Snapmart - NELLORE' },
+    { src: imgl6, title: 'Snapmart - KOLKATA' },
+    { src: imgl7, title: 'Snapmart - KOCHI' },
+    { src: imgl8, title: 'Snapmart - PUNE' },
+    { src: imgl9, title: 'Snapmart - KERALA' },
+    { src: imgl10, title: 'Snapmart - SURATH' },
 
 
   ];
 
   return (
-    <div className="container">
+    <div className="container text-center sb-1">
         <h1><hr></hr></h1>
       <h1 className="heading" class="text-center ">
       <FcBookmark size={50}/>  
         {' '}
-        <span> my Gallery </span>  <FcBookmark size={50}/>
+        <span> Gallery </span>  <FcBookmark size={50}/>
       </h1><hr></hr>
       <div className="row">
         {images.map((image, index) => (

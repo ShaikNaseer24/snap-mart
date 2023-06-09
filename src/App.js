@@ -17,7 +17,7 @@ import Categories1 from './supermarket/Categories1';
 import Home from './supermarket/Home';
 import Photes from './supermarket/Photes';
 import Contact from './supermarket/Contact';
-import Mycart from './supermarket/mycart';
+
 import Slider from './supermarket/slider';
 import {CartProvider} from "react-use-cart";
 import { Fragment } from 'react';
@@ -31,7 +31,7 @@ import Nearby from './supermarket/Nearby';
 import Fruits from './supermarket/Fruits';
 import Dairy from './supermarket/Dairy';
 import Vegetables from './supermarket/Vegetables';
-import Carts from './supermarket/Carts';
+
 import { GiShoppingCart} from 'react-icons/gi';
 import { BiUserCircle } from 'react-icons/bi';
 import { FaHome} from 'react-icons/fa';
@@ -56,39 +56,6 @@ function App() {
       behavior: 'smooth'
     });
   };
-  const [cartItems, setCartItems] = useState([]);
-
-  const addToCart = (item) => {
-    const existingItem = cartItems.find((cartItem) => cartItem.name === item.name);
-    if (existingItem) {
-      const updatedItems = cartItems.map((cartItem) =>
-        cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-      );
-      setCartItems(updatedItems);
-    } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
-    }
-  };
-
-  const removeFromCart = (item) => {
-    const updatedItems = cartItems.filter((cartItem) => cartItem.name !== item.name);
-    setCartItems(updatedItems);
-  };
-
-  const incrementQuantity = (item) => {
-    const updatedItems = cartItems.map((cartItem) =>
-      cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-    );
-    setCartItems(updatedItems);
-  };
-
-  const decrementQuantity = (item) => {
-    const updatedItems = cartItems.map((cartItem) =>
-      cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem
-    );
-    setCartItems(updatedItems.filter((cartItem) => cartItem.quantity > 0));
-  };
-
   return (
     <div>  
       
@@ -130,20 +97,10 @@ function App() {
             </li> &nbsp;
             
                 <li class="nav-item me-3 me-lg-0 " >
-                    <Link class="nav-link text-white" to="/Navbar"onClick={scrollToTop} >
+                    <Link class="nav-link text-white" to="/produts"onClick={scrollToTop} >
                   
-        <FaShoppingCart size={35}/>
-        {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
-        {/* Render the cart items */}
-        {cartItems.length > 0 && (
-          <div className="cart-items-dropdown">
-            {cartItems.map((item) => (
-              <div key={item.name}
-              item={item.price}
-              image={item.imgd13}></div>
-            ))}
-          </div>
-        )}
+        <FaShoppingCart size={32}/>
+        
           </Link>
                 </li></ul>
          </div>
@@ -160,10 +117,10 @@ function App() {
           <Route path="/Fruits" element={<Fruits/>} />
           <Route path="/Vegetables" element={<Vegetables/>} />
           <Route path="/Products" element={<Products />} />
-          <Route path="/Carts" element={<Carts/>} />
+         
           <Route path="/Cart1" element={<Cart1/>} />
           <Route path="/CartButton" element={<CartButton/>} />
-
+        
           <Route path="/Cards" element={<Cards/>} />
           <Route path="/Test" element={<Test/>} />
           <Route path="/Store2" element={<Store2/>} />

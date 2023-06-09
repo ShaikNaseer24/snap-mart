@@ -38,14 +38,7 @@ export default function Cart1() {
       setCartItems(updatedItems.filter((cartItem) => cartItem.quantity > 0));
     };
   
-    const openCartPage = () => {
-      setShowCart(true);
-    };
-  
-    const closeCartPage = () => {
-      setShowCart(false);
-    };
-  
+
 
   return (
     <div>
@@ -85,12 +78,10 @@ export default function Cart1() {
                 ))}
               </div>
             )}
-            <button className="close-btn" onClick={closeCartPage}>
-              Close Cart
-            </button>
+         
           </div>
         ) : (
-          <div className="cart-icon" onClick={openCartPage}>
+          <div className="cart-icon">
             <GiShoppingCart size={35}/>
             {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
           </div>

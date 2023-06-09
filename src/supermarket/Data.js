@@ -15,13 +15,7 @@ title:'juicy Grapes',
 desc:'Quality Juice',
 price:55,
         },
-        {
-            id:1,
-            img:img2,
-            title:'water melon',
-            desc:'Quality fruit',
-            price:55,
-                    },
+        
     ],
 };
 export default Data;

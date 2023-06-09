@@ -322,12 +322,14 @@ export default function Products() {
           </div>
         </div>
         {showCart ? (
-          <div className="cart-page">
-            <h2>Cart</h2>
+          <div className="cart-page container text-center"  class="cartitems" >
+                  
+            <h2 className="bg-dark text-white">Cart</h2>
             {cartItems.length === 0 ? (
-              <p>No items in cart</p>
+              <p className="bg-dark text-white">No items in cart</p>
             ) : (
-              <div className="cart-items">
+              <div className="cart-items" >
+                
                 {cartItems.map((item) => (
                   <div className="cart-item" key={item.name}>
                     <img src={item.image} alt={item.name} />
@@ -335,19 +337,19 @@ export default function Products() {
                       <h3>{item.name}</h3>
                       <p>{item.price}</p>
                       <div className="quantity">
-                        <button
-                          className="quantity-btn"
+                        <button 
+                          className="quantity-btn bg-info "
                           onClick={() => decrementQuantity(item)}
                           disabled={item.quantity === 1}
                         >
                           -
                         </button>
                         <span>{item.quantity}</span>
-                        <button className="quantity-btn" onClick={() => incrementQuantity(item)}>
+                        <button className="quantity-btn bg-info " onClick={() => incrementQuantity(item)}>
                           +
                         </button>
                       </div>
-                      <button className="remove-btn" onClick={() => removeFromCart(item)}>
+                      <button   className="remove-btn bg-danger" onClick={() => removeFromCart(item)}>
                         Remove
                       </button>
                     </div>
@@ -355,17 +357,17 @@ export default function Products() {
                 ))}
               </div>
             )}
-            <button className="close-btn" onClick={closeCartPage}>
+            <button  className="close-btn bg-warning" onClick={closeCartPage}>
               Close Cart
             </button>
-          </div>
+           </div> 
         ) : (
           <div className="cart-icon" onClick={openCartPage}>
             <FaShoppingCart />
             {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
           </div>
         )}
-         <CartButton cartItems={cartItems} openCartPage={openCartPage} />
+       
       </section>
      
     </div>
