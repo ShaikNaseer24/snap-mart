@@ -97,7 +97,7 @@ function App() {
             </li> &nbsp;
             
                 <li class="nav-item me-3 me-lg-0 " >
-                    <Link class="nav-link text-white" to="/produts"onClick={scrollToTop} >
+                    <Link class="nav-link text-white" to="/Products"onClick={scrollToTop} >
                   
         <FaShoppingCart size={32}/>
         
