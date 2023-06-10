@@ -213,7 +213,7 @@ export default function Products() {
               <SwiperSlide>
                 <div className="box">
                   <img src={imgp5} alt="" class="img-fluid img-thumbnail" />
-                  <h3>fresh grapes</h3>
+                  <h3>fresh potatos</h3>
                   <div className="price">₹40.99/ -- 70.99/-</div>
                   <div className="stars">
                     <FontAwesomeIcon icon={faStar} />
@@ -240,7 +240,7 @@ export default function Products() {
               <SwiperSlide>
                 <div className="box">
                   <img src={imgp6} alt="" class="img-fluid img-thumbnail" />
-                  <h3>fresh mango</h3>
+                  <h3>fresh avocado</h3>
                   <div className="price">₹ 40.99/ -- 70.99/-</div>
                   <div className="stars">
                     <FontAwesomeIcon icon={faStar} />
@@ -267,7 +267,7 @@ export default function Products() {
               <SwiperSlide>
                 <div className="box">
                   <img src={imgp7} alt="" class="img-fluid img-thumbnail" />
-                  <h3>fresh avocado</h3>
+                  <h3>fresh carrot</h3>
                   <div className="price">₹ 50.99/ -- 80.99/-</div>
                   <div className="stars">
                     <FontAwesomeIcon icon={faStar} />
