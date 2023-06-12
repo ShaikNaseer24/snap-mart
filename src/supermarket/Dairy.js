@@ -66,7 +66,7 @@ export default function Dairy({ }) {
       <h1 className="heading" class="text-center ">
       <FcBookmark size={50}/>  
         {' '}
-        <span> Dairy Products</span>  <FcBookmark size={50}/>
+        <span> Dairy</span>  <FcBookmark size={50}/>
       </h1><hr></hr>
       <div className="products-slider slider">
         <div className="wrapper swiper-wrapper">
