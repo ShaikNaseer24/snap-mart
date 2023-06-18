@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { contactConfig } from "./content_option";
-
 import { useState } from "react";
 
 const Contact = () =>{
@@ -11,12 +10,13 @@ const Contact = () =>{
     const handleSubmit = async (e) => {
       e.preventDefault();
       setStatus("Sending...");
-      const { name, email, message,tel } = e.target.elements;
+      const { name, email, message,tel,file } = e.target.elements;
       let details = {
         name: name.value,
         email: email.value,
         message: message.value,
         tel: tel.value,
+        file:file.value,
 
       };
       let response = await fetch("http://localhost:3002/contact", {
@@ -113,6 +113,19 @@ const Contact = () =>{
                 rows="5" 
                 required
               ></textarea>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+        <label htmlFor="profilePhoto" style={{ fontWeight: 'bold', marginRight: '10px' }}>
+          UploadDocument
+        </label>
+        <input
+          type="file"
+
+          id="file"
+          name="file"
+         
+          required
+        />
+      </div>
               <br /></Col></Row>
               <Row>
                 <Col lg="12" className="form-group">
@@ -131,6 +144,7 @@ const Contact = () =>{
           Google Map Address
         </h1>
       </div>
+      
       <div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.770275363542!2d77.51560167425356!3d12.922481215954972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3e21c103985b%3A0x7af7b0258b8258fa!2sMatrical%20Technologies!5e0!3m2!1sen!2sin!4v1685165598387!5m2!1sen!2sin" width="100%" height="350"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
