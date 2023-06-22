@@ -4,7 +4,12 @@ import axios from 'axios';
 
 const Login= () =>{
 
-
+  const [file, setFile] = useState(null);
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+  };
+  
 const [formData, setFormData] = useState({
 
     customer_firstname: '',
@@ -26,12 +31,28 @@ const [formData, setFormData] = useState({
     e.preventDefault();
     createMerchant();
   }
+
   const createMerchant = async () => {
     setSubmitting(true);
     try {
-      const response = await axios.post('http://localhost:3001/customerlogin_data', formData);
+      const formData = new FormData();
+      formData.append('customer_firstname', formData.customer_firstname);
+      formData.append('customer_email', formData.customer_email);
+      formData.append('customer_password', formData.customer_password);
+      formData.append('file', file);
+  
+      const response = await axios.post(
+        'http://localhost:3001/customerlogin_data',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+      
       console.log(response);
-      alert('login Successfully Submitted');
+      alert('Login successfully submitted');
       setError('');
     } catch (error) {
       console.error(error);
@@ -41,7 +62,7 @@ const [formData, setFormData] = useState({
       setSubmitting(false);
     }
   };
- 
+  
   return (
     <div> 
             <form onSubmit={handleSubmit}>
@@ -93,6 +114,18 @@ const [formData, setFormData] = useState({
                   />
                 </label>
               </div>
+              <div className="form-group">
+  <label htmlFor="file">File:</label>
+  <input
+    type="file"
+    id="file"
+    name="file"
+    onChange={handleFileChange}
+    required
+    data-aos="fade-right"
+  />
+</div>
+
               <div className="form-group">
               <button type="submit" disabled={submitting} data-aos="fade-up">
                   {submitting ? 'Submitting...' : 'Submit'}
